@@ -26,6 +26,7 @@ namespace ExampleEvents
         {
             API.RegisterEvent(typeof(Fight), API.Priority.High); // This is how you register your events. Simply use the API.RegisterEvent method to add your class.
             API.RegisterEvent(typeof(WeirdCar), API.Priority.Low); // There are 3 priorities you can have for events. Low, Normal, High. Default value is Normal.
+            //API.RegisterEvent(typeof(CleanExample)); // Without a second arg it default to normal priority.
         }
 
         public override void Finally()
