@@ -47,3 +47,10 @@
 > <br><br>
 >
 > ##### <br><br>These three methods alone can handle all simple events. There are two other methods which can be used for RageNativeUI objects for dialogue or actions. There is a good example of them being used in the Fight.cs class in the Events directory.
+<br>
+<br>
+
+## Registering Events
+> You will need to register all events in your main.cs class at runtime. It's very simple to do, just use the `API.RegisterEvent(typeof(EventClass))` by default the priority on events in normal. There are 3 priorities you can choose from, Low, Normal, High.
+> To assign a priority, when you register the event you can add a second arg. Example: `API.RegisterEvent(typeof(Fight), API.Priority.High)`
+> ![Example](https://i.imgur.com/HvNiubz.png)
