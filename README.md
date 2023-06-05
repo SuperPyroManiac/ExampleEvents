@@ -13,7 +13,7 @@
 
 <br>
 
-> ## Creating the Event class.
+## Creating the Event class.
 >> Your class will inherit from the AmbientEvent class. Similar to how callouts inherit from the Callout class in LSPDFR.<br>
 >>`public class CleanExample : AmbientEvent`
 > <br>
