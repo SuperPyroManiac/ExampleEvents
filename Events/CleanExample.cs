@@ -38,15 +38,6 @@ namespace ExampleEvents.Events
         protected override void Process() // This is the second method SE runs, this runs in a loop until End(bool) is called.
         {
             Game.LogTrivial("I will spam you log, I run in a loop!");
-            if (!onScene && Game.LocalPlayer.Character.DistanceTo(EventLocation) < 20f)
-            {
-                onScene = true;
-                
-                if (Settings.ShowHints) // These are required if you want to be included on the SE Page. These are the hints that can be enabled in SE.ini
-                    Game.DisplayNotification("3dtextures", "mpgroundlogo_cops", "~y~Officer Sighting",
-                        "~r~Your Event Title", "Your Event Description!");
-                Game.DisplayHelp("~y~Press ~r~" + Settings.Interact + "~y~ to open interaction menu."); // This must also be included. It just reminds people they can hit Y to open the SE menu.
-            }
 
             if (ped.IsDead)
             {
