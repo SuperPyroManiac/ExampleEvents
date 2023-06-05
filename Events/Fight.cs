@@ -20,7 +20,7 @@ namespace ExampleEvents.Events
         {
         private string _name1;
         private string _name2;
-        private Vector3 _spawnPoint;
+        private Vector3 EventLocation;
         private UIMenuItem _speakSuspect;
         private UIMenuItem _speakSuspect2;
         private Ped _suspect;
@@ -30,9 +30,9 @@ namespace ExampleEvents.Events
         protected override void StartEvent() // This is the first method in AmbientEvent that is executed. Use this to setup your scene.
         {
             //Setup
-            API.SideOfRoadLocation(120, 45, out _spawnPoint, out _); // This is part of the SuperEvents.API class which adds some useful features. This will find a location on the side of the road.
-            EventLocation = _spawnPoint; // This is where you tell SE where the spawnpoint of your event is, this is critical!
-            if (_spawnPoint.DistanceTo(Player) < 35f) // This is very important, make sure the event spawned at a reasonable distance or cancel the event.
+            API.SideOfRoadLocation(120, 45, out EventLocation, out _); // This is part of the SuperEvents.API class which adds some useful features. This will find a location on the side of the road.
+            EventLocation = EventLocation; // This is where you tell SE where the spawnpoint of your event is, this is critical!
+            if (EventLocation.DistanceTo(Player) < 35f) // This is very important, make sure the event spawned at a reasonable distance or cancel the event.
             {
                 End(true); // End() method is different from LSPDFR, this one requires a bool. false will dismiss everything in the lists below, and true will delete everything in the lists below.
                 return;
@@ -40,7 +40,7 @@ namespace ExampleEvents.Events
             Game.LogTrivial("ExampleEvents: Fight event loaded!"); // Please always add some sort of identifiers to your events for the log!
 
             //Peds
-            _suspect = new Ped(_spawnPoint) {IsPersistent = true, BlockPermanentEvents = true};
+            _suspect = new Ped(EventLocation) {IsPersistent = true, BlockPermanentEvents = true};
             API.SetDrunk(_suspect, true); // Another features in the SuperEvents.API class.
             _name1 = Functions.GetPersonaForPed(_suspect).FullName;
             _suspect.Metadata.stpAlcoholDetected = true;
@@ -68,7 +68,7 @@ namespace ExampleEvents.Events
                 switch (_tasks)
                 {
                     case Tasks.CheckDistance:
-                        if (Game.LocalPlayer.Character.DistanceTo(_spawnPoint) < 20f)
+                        if (Game.LocalPlayer.Character.DistanceTo(EventLocation) < 20f)
                         {
                             _suspect.PlayAmbientSpeech("GENERIC_CURSE_MED");
                             _suspect2.PlayAmbientSpeech("GENERIC_CURSE_MED");

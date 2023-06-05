@@ -17,23 +17,25 @@ namespace ExampleEvents.Events
     public class WeirdCar : AmbientEvent // All events must inherit from the AmbientEvent base class.
      {
         private Vehicle _eVehicle;
-        private Vector3 _spawnPoint;
 
         private Tasks _tasks = Tasks.CheckDistance;
 
         protected override void StartEvent() // This is the first method in AmbientEvent that is executed. Use this to setup your scene.
         {
             //Setup
-            API.SideOfRoadLocation(120, 45, out _spawnPoint, out _); // This is part of the SuperEvents.API class which adds some useful features. This will find a location on the side of the road.
-            EventLocation = _spawnPoint; // This is where you tell SE where the spawnpoint of your event is, this is critical!
-            if (_spawnPoint.DistanceTo(Player) < 35f) // This is very important, make sure the event spawned at a reasonable distance or cancel the event.
+            var spawnPoint = new Vector3();
+            API.SideOfRoadLocation(120, 45, out spawnPoint, out _); // This is part of the SuperEvents.API class which adds some useful features. This will find a location on the side of the road.
+            EventLocation = spawnPoint;
+            EventTitle = "Abandoned Vehicle";
+            EventDescription = "Investigate the vehicle.";
+            if (EventLocation.DistanceTo(Player) < 35f) // This is very important, make sure the event spawned at a reasonable distance or cancel the event.
             {
                 End(true);
                 return;
             }
             Game.LogTrivial("ExampleEvents: WeirdCar event loaded!"); // Please always add some sort of identifiers to your events for the log!
             //eVehicle
-            API.SpawnNormalCar(out _eVehicle, _spawnPoint);
+            API.SpawnNormalCar(out _eVehicle, EventLocation);
             EntitiesToClear.Add(_eVehicle);
 
             base.StartEvent();
@@ -46,14 +48,8 @@ namespace ExampleEvents.Events
                 switch (_tasks)
                 {
                     case Tasks.CheckDistance:
-                        if (Game.LocalPlayer.Character.DistanceTo(_spawnPoint) < 25f)
+                        if (Game.LocalPlayer.Character.DistanceTo(EventLocation) < 25f)
                         {
-                            if (Settings.ShowHints)// This is the SuperEvents.Settings class, some settings are public so you can read their values! It is important that you include these features.
-                                // For the sake of consistency, please use the same logo and colors. If you do not use these, your plugins will not be recommended on the SE page.
-                                Game.DisplayNotification("3dtextures", "mpgroundlogo_cops", "~y~Officer Sighting",
-                                    "~r~Abandoned Vehicle", "Investigate the vehicle.");
-                            Game.DisplayHelp("~y~Press ~r~" + Settings.Interact + "~y~ to open interaction menu.");
-                            // Again this is a requirement to be on the SE page. The interact key by default in Y but can be changed in the SE.ini file.
                             _tasks = Tasks.OnScene;
                         }
 

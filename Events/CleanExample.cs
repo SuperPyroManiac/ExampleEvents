@@ -15,6 +15,8 @@ namespace ExampleEvents.Events
         
         protected override void StartEvent() // Firt method loaded by SuperEvents - Setup here
         {
+            EventTitle = "Example Event";
+            EventDescription = "Can I get uhhhhhhhhhhhh... Boneless pizza?";
             EventLocation = new Vector3(); // You must set the EventLocation.
             if (EventLocation.DistanceTo(Player) < 35f)
             {
