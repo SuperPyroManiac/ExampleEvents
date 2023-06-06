@@ -8,7 +8,7 @@ using RAGENativeUI.Elements;
 using SuperEvents;
 using SuperEvents.EventFunctions;
 
-namespace ExampleEvents.Events
+namespace ZExampleEvents.Events
 {
     
     
@@ -20,7 +20,6 @@ namespace ExampleEvents.Events
         {
         private string _name1;
         private string _name2;
-        private Vector3 EventLocation;
         private UIMenuItem _speakSuspect;
         private UIMenuItem _speakSuspect2;
         private Ped _suspect;
@@ -30,8 +29,11 @@ namespace ExampleEvents.Events
         protected override void StartEvent() // This is the first method in AmbientEvent that is executed. Use this to setup your scene.
         {
             //Setup
-            API.SideOfRoadLocation(120, 45, out EventLocation, out _); // This is part of the SuperEvents.API class which adds some useful features. This will find a location on the side of the road.
-            EventLocation = EventLocation; // This is where you tell SE where the spawnpoint of your event is, this is critical!
+            var spawnPoint = new Vector3();
+            API.SideOfRoadLocation(120, 45, out spawnPoint, out _); // This is part of the SuperEvents.API class which adds some useful features. This will find a location on the side of the road.
+            EventLocation = spawnPoint; // This is where you tell SE where the spawnpoint of your event is, this is critical!
+            EventTitle = "A Fight";
+            EventDescription = "Stop the fight, and make sure everyone is ok.";
             if (EventLocation.DistanceTo(Player) < 35f) // This is very important, make sure the event spawned at a reasonable distance or cancel the event.
             {
                 End(true); // End() method is different from LSPDFR, this one requires a bool. false will dismiss everything in the lists below, and true will delete everything in the lists below.
@@ -72,12 +74,6 @@ namespace ExampleEvents.Events
                         {
                             _suspect.PlayAmbientSpeech("GENERIC_CURSE_MED");
                             _suspect2.PlayAmbientSpeech("GENERIC_CURSE_MED");
-                            if (Settings.ShowHints) // This is the SuperEvents.Settings class, some settings are public so you can read their values! It is important that you include these features.
-                            // For the sake of consistency, please use the same logo and colors. If you do not use these, your plugins will not be recommended on the SE page.
-                                Game.DisplayNotification("3dtextures", "mpgroundlogo_cops", "~y~Officer Sighting",
-                                    "~r~A Fight", "Stop the fight, and make sure everyone is ok.");
-                            Game.DisplayHelp("~y~Press ~r~" + Settings.Interact + "~y~ to open interaction menu.");
-                            // Again this is a requirement to be on the SE page. The interact key by default in Y but can be changed in the SE.ini file.
                             Questioning.Enabled = true; // This is part of the built in SuperEvents RNUI menu. If you include dialogue you can easily use the built in button.
                             _tasks = Tasks.OnScene;
                         }
@@ -85,7 +81,7 @@ namespace ExampleEvents.Events
                         break;
                     case Tasks.OnScene:
                         var choice = new Random().Next(1, 4);
-                        Game.LogTrivial("ExampleEvents: Fight event picked scenerio #" + choice);
+                        Game.LogTrivial("ExampleEvents: Fight event picked scenario #" + choice);
                         switch (choice)
                         {
                             case 1:

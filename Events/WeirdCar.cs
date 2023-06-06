@@ -3,7 +3,7 @@ using Rage;
 using SuperEvents;
 using SuperEvents.EventFunctions;
 
-namespace ExampleEvents.Events
+namespace ZExampleEvents.Events
 {
     
     

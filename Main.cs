@@ -1,10 +1,10 @@
 ﻿using System.Reflection;
-using ExampleEvents.Events;
 using LSPD_First_Response.Mod.API;
 using Rage;
 using SuperEvents.EventFunctions;
+using ZExampleEvents.Events;
 
-namespace ExampleEvents
+namespace ZExampleEvents
 {
     public class Main : Plugin
     {
@@ -15,11 +15,13 @@ namespace ExampleEvents
         
         private static void OnOnDutyStateChangedHandler(bool onDuty)
         {
-            if (!onDuty) return;
-            RegisterEvents();
-            GameFiber.Wait(5000);
-            Game.DisplayNotification("3dtextures", "mpgroundlogo_cops", "~r~ExampleEvents", "~g~Plugin Loaded.",
-                "ExampleEvents version: " + Assembly.GetExecutingAssembly().GetName().Version + " loaded.");
+            if (onDuty)
+            {
+                RegisterEvents();
+                GameFiber.Wait(5000);
+                Game.DisplayNotification("3dtextures", "mpgroundlogo_cops", "~r~ExampleEvents", "~g~Plugin Loaded.",
+                    "ExampleEvents version: " + Assembly.GetExecutingAssembly().GetName().Version + " loaded.");
+            }
         }
         
         private static void RegisterEvents()

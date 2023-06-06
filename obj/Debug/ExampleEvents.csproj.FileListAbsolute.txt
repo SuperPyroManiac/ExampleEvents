@@ -1,5 +1,3 @@
-X:\Coding\Projects\ExampleEvents\ExampleEvents\bin\Debug\ExampleEvents.dll
-X:\Coding\Projects\ExampleEvents\ExampleEvents\bin\Debug\ExampleEvents.pdb
 X:\Coding\Projects\ExampleEvents\ExampleEvents\bin\Debug\LSPD First Response.dll
 X:\Coding\Projects\ExampleEvents\ExampleEvents\bin\Debug\RAGENativeUI.dll
 X:\Coding\Projects\ExampleEvents\ExampleEvents\bin\Debug\RagePluginHookSDK.dll
@@ -11,5 +9,7 @@ X:\Coding\Projects\ExampleEvents\ExampleEvents\bin\Debug\RagePluginHookSDK.xml
 X:\Coding\Projects\ExampleEvents\ExampleEvents\obj\Debug\ExampleEvents.csproj.AssemblyReference.cache
 X:\Coding\Projects\ExampleEvents\ExampleEvents\obj\Debug\ExampleEvents.csproj.CoreCompileInputs.cache
 X:\Coding\Projects\ExampleEvents\ExampleEvents\obj\Debug\ExampleEvents.csproj.CopyComplete
-X:\Coding\Projects\ExampleEvents\ExampleEvents\obj\Debug\ExampleEvents.dll
-X:\Coding\Projects\ExampleEvents\ExampleEvents\obj\Debug\ExampleEvents.pdb
+X:\Coding\Projects\ExampleEvents\ExampleEvents\bin\Debug\ZExampleEvents.dll
+X:\Coding\Projects\ExampleEvents\ExampleEvents\bin\Debug\ZExampleEvents.pdb
+X:\Coding\Projects\ExampleEvents\ExampleEvents\obj\Debug\ZExampleEvents.dll
+X:\Coding\Projects\ExampleEvents\ExampleEvents\obj\Debug\ZExampleEvents.pdb

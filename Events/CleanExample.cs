@@ -4,11 +4,10 @@ using RAGENativeUI.Elements;
 using SuperEvents;
 using SuperEvents.EventFunctions;
 
-namespace ExampleEvents.Events
+namespace ZExampleEvents.Events
 {
     public class CleanExample : AmbientEvent // Inherits the AmbientEvent base class.
     {
-        private bool onScene;
         private Ped ped;
         private Vehicle vehicle;
         private Blip blip;
