@@ -2,10 +2,8 @@
 using PyroCommon.Events;
 using PyroCommon.API;
 using Rage;
-using SuperEvents;
-using SuperEvents.EventFunctions;
 
-namespace ZExampleEvents.Events
+namespace ExampleEvents.Events
 {
     
     

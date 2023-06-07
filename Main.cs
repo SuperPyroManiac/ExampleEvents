@@ -1,10 +1,9 @@
 ﻿using System.Reflection;
 using LSPD_First_Response.Mod.API;
 using Rage;
-using SuperEvents.EventFunctions;
-using ZExampleEvents.Events;
+using ExampleEvents.Events;
 
-namespace ZExampleEvents
+namespace ExampleEvents
 {
     public class Main : Plugin
     {

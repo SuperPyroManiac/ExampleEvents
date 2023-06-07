@@ -7,10 +7,8 @@ using Rage;
 using Rage.Native;
 using RAGENativeUI;
 using RAGENativeUI.Elements;
-using SuperEvents;
-using SuperEvents.EventFunctions;
 
-namespace ZExampleEvents.Events
+namespace ExampleEvents.Events
 {
     
     

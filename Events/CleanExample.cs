@@ -3,10 +3,8 @@ using PyroCommon.Events;
 using Rage;
 using RAGENativeUI;
 using RAGENativeUI.Elements;
-using SuperEvents;
-using SuperEvents.EventFunctions;
 
-namespace ZExampleEvents.Events
+namespace ExampleEvents.Events
 {
     public class CleanExample : AmbientEvent // Inherits the AmbientEvent base class.
     {

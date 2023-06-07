@@ -7,8 +7,8 @@
         <ProjectGuid>{438BEF9B-B1DD-4958-B2A8-FEB034D6989D}</ProjectGuid>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>ZExampleEvents</RootNamespace>
-        <AssemblyName>ZExampleEvents</AssemblyName>
+        <RootNamespace>ExampleEvents</RootNamespace>
+        <AssemblyName>ExampleEvents</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
         <LangVersion>default</LangVersion>
@@ -34,11 +34,11 @@
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="LSPD First Response">
-          <HintPath>..\..\..\Depend\LSPDFR\LSPD First Response.dll</HintPath>
+          <HintPath>..\Dependencies\LSPD First Response.dll</HintPath>
         </Reference>
         <Reference Include="Microsoft.CSharp" />
         <Reference Include="PyroCommon">
-          <HintPath>..\..\..\Depend\LSPDFR\PyroCommon.dll</HintPath>
+          <HintPath>..\SuperPlugins\PyroCommon\bin\Debug\PyroCommon.dll</HintPath>
         </Reference>
         <Reference Include="RAGENativeUI, Version=1.9.2.0, Culture=neutral, processorArchitecture=Amd64">
           <HintPath>packages\RAGENativeUI.1.9.2\lib\net472\RAGENativeUI.dll</HintPath>
@@ -47,11 +47,13 @@
           <HintPath>packages\RagePluginHook.1.98.0\lib\net472\RagePluginHook.dll</HintPath>
         </Reference>
         <Reference Include="SuperEvents">
-          <HintPath>..\..\..\Depend\LSPDFR\SuperEvents.dll</HintPath>
+          <HintPath>..\SuperPlugins\SuperEvents\bin\Debug\SuperEvents.dll</HintPath>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
+        <Reference Include="System.Drawing" />
+        <Reference Include="System.Windows.Forms" />
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
