@@ -37,6 +37,9 @@
           <HintPath>..\..\..\Depend\LSPDFR\LSPD First Response.dll</HintPath>
         </Reference>
         <Reference Include="Microsoft.CSharp" />
+        <Reference Include="PyroCommon">
+          <HintPath>..\..\..\Depend\LSPDFR\PyroCommon.dll</HintPath>
+        </Reference>
         <Reference Include="RAGENativeUI">
           <HintPath>..\..\..\Depend\LSPDFR\RAGENativeUI.dll</HintPath>
         </Reference>

@@ -1,4 +1,6 @@
-﻿using Rage;
+﻿using PyroCommon.API;
+using PyroCommon.Events;
+using Rage;
 using RAGENativeUI;
 using RAGENativeUI.Elements;
 using SuperEvents;
@@ -25,7 +27,7 @@ namespace ZExampleEvents.Events
 
             ped = new Ped(EventLocation);
             ped.IsPersistent = true;
-            API.SpawnNormalCar(out vehicle, EventLocation);
+            PyroFunctions.SpawnNormalCar(out vehicle, EventLocation);
             blip = new Blip(new Vector3(0, 0, 0));
             
             EntitiesToClear.Add(ped); //Add entities to this list! SE will handle all the cleaning of them!

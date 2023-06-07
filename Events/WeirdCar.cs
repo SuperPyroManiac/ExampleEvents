@@ -1,4 +1,6 @@
 ﻿using System;
+using PyroCommon.Events;
+using PyroCommon.API;
 using Rage;
 using SuperEvents;
 using SuperEvents.EventFunctions;
@@ -24,7 +26,7 @@ namespace ZExampleEvents.Events
         {
             //Setup
             var spawnPoint = new Vector3();
-            API.SideOfRoadLocation(120, 45, out spawnPoint, out _); // This is part of the SuperEvents.API class which adds some useful features. This will find a location on the side of the road.
+            PyroFunctions.FindSideOfRoad(120, 45, out spawnPoint, out _); // This is part of the SuperEvents.API class which adds some useful features. This will find a location on the side of the road.
             EventLocation = spawnPoint;
             EventTitle = "Abandoned Vehicle";
             EventDescription = "Investigate the vehicle.";
@@ -35,7 +37,7 @@ namespace ZExampleEvents.Events
             }
             Game.LogTrivial("ExampleEvents: WeirdCar event loaded!"); // Please always add some sort of identifiers to your events for the log!
             //eVehicle
-            API.SpawnNormalCar(out _eVehicle, EventLocation);
+            PyroFunctions.SpawnNormalCar(out _eVehicle, EventLocation);
             EntitiesToClear.Add(_eVehicle);
 
             base.StartEvent();
@@ -60,10 +62,10 @@ namespace ZExampleEvents.Events
                         switch (choice)
                         {
                             case 1:
-                                API.DamageVehicle(_eVehicle, 200, 200);
+                                PyroFunctions.DamageVehicle(_eVehicle, 200, 200);
                                 break;
                             case 2:
-                                API.DamageVehicle(_eVehicle, 200, 200);
+                                PyroFunctions.DamageVehicle(_eVehicle, 200, 200);
                                 _eVehicle.IsStolen = true;
                                 break;
                             case 3:

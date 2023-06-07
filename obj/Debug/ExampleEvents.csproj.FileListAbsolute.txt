@@ -13,3 +13,4 @@ X:\Coding\Projects\ExampleEvents\ExampleEvents\bin\Debug\ZExampleEvents.dll
 X:\Coding\Projects\ExampleEvents\ExampleEvents\bin\Debug\ZExampleEvents.pdb
 X:\Coding\Projects\ExampleEvents\ExampleEvents\obj\Debug\ZExampleEvents.dll
 X:\Coding\Projects\ExampleEvents\ExampleEvents\obj\Debug\ZExampleEvents.pdb
+X:\Coding\Projects\ExampleEvents\ExampleEvents\bin\Debug\PyroCommon.dll
