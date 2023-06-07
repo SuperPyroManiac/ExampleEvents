@@ -40,11 +40,11 @@
         <Reference Include="PyroCommon">
           <HintPath>..\..\..\Depend\LSPDFR\PyroCommon.dll</HintPath>
         </Reference>
-        <Reference Include="RAGENativeUI">
-          <HintPath>..\..\..\Depend\LSPDFR\RAGENativeUI.dll</HintPath>
+        <Reference Include="RAGENativeUI, Version=1.9.2.0, Culture=neutral, processorArchitecture=Amd64">
+          <HintPath>packages\RAGENativeUI.1.9.2\lib\net472\RAGENativeUI.dll</HintPath>
         </Reference>
-        <Reference Include="RagePluginHook">
-          <HintPath>..\..\..\Depend\LSPDFR\RagePluginHookSDK.dll</HintPath>
+        <Reference Include="RagePluginHook, Version=0.0.0.0, Culture=neutral, processorArchitecture=Amd64">
+          <HintPath>packages\RagePluginHook.1.98.0\lib\net472\RagePluginHook.dll</HintPath>
         </Reference>
         <Reference Include="SuperEvents">
           <HintPath>..\..\..\Depend\LSPDFR\SuperEvents.dll</HintPath>
@@ -63,6 +63,9 @@
     </ItemGroup>
     <ItemGroup>
       <Content Include="README.md" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="packages.config" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
