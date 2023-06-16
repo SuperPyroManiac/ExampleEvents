@@ -25,6 +25,8 @@ namespace ExampleEvents
 
         private static void RegisterEvents()
         {
+            EventManager.RegisterEvent(typeof(ExampleFight), EventManager.Priority.Low); //You can set the priority of events here, Low, Normal, High
+            EventManager.RegisterEvent(typeof(ExampleSimple)); //If you dont specify priority, it defaults to "normal"
         }
 
         public override void Finally()
