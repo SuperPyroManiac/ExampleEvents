@@ -33,21 +33,21 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
-        <Reference Include="LSPD First Response">
-          <HintPath>..\Dependencies\LSPD First Response.dll</HintPath>
+        <Reference Include="LSPD First Response, Version=0.4.8433.20359, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\packages\PyroSpecial.1.0.1\lib\LSPD First Response.dll</HintPath>
         </Reference>
         <Reference Include="Microsoft.CSharp" />
         <Reference Include="PyroCommon">
-          <HintPath>..\SuperPlugins\PyroCommon\bin\Debug\PyroCommon.dll</HintPath>
+          <HintPath>..\..\SuperPlugins\SuperEvents\bin\Debug\PyroCommon.dll</HintPath>
         </Reference>
         <Reference Include="RAGENativeUI, Version=1.9.2.0, Culture=neutral, processorArchitecture=Amd64">
-          <HintPath>packages\RAGENativeUI.1.9.2\lib\net472\RAGENativeUI.dll</HintPath>
+          <HintPath>..\packages\RAGENativeUI.1.9.2\lib\net472\RAGENativeUI.dll</HintPath>
         </Reference>
         <Reference Include="RagePluginHook, Version=0.0.0.0, Culture=neutral, processorArchitecture=Amd64">
-          <HintPath>packages\RagePluginHook.1.98.0\lib\net472\RagePluginHook.dll</HintPath>
+          <HintPath>..\packages\RagePluginHook.1.98.0\lib\net472\RagePluginHook.dll</HintPath>
         </Reference>
         <Reference Include="SuperEvents">
-          <HintPath>..\SuperPlugins\SuperEvents\bin\Debug\SuperEvents.dll</HintPath>
+          <HintPath>..\..\SuperPlugins\SuperEvents\bin\Debug\SuperEvents.dll</HintPath>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
@@ -55,11 +55,13 @@
         <Reference Include="System.Drawing" />
         <Reference Include="System.Windows.Forms" />
         <Reference Include="System.Xml" />
+        <Reference Include="UltimateBackup, Version=1.8.7.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\packages\PyroSpecial.1.0.1\lib\UltimateBackup.dll</HintPath>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Events\CleanExample.cs" />
-        <Compile Include="Events\Fight.cs" />
-        <Compile Include="Events\WeirdCar.cs" />
+        <Compile Include="Events\ExampleSimple.cs" />
+        <Compile Include="Events\ExampleFight.cs" />
         <Compile Include="Main.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
@@ -67,6 +69,7 @@
       <Content Include="README.md" />
     </ItemGroup>
     <ItemGroup>
+      <None Include="App.config" />
       <None Include="packages.config" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
