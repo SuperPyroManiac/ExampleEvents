@@ -14,7 +14,7 @@
 <br>
 
 ## Creating the Event class.
->> Your class will inherit from the AmbientEvent class. Similar to how callouts inherit from the Callout class in LSPDFR.<br>
+> Your class will inherit from the AmbientEvent class. Similar to how callouts inherit from the Callout class in LSPDFR.<br>
 >>`public class EventExample : AmbientEvent`
 > <br>
 ## Main Overriding methods
@@ -30,6 +30,8 @@
 >  - **Int OnSceneDistance**: Optional value for the OnScene trigger. Defaults to 20.
 >  - **EntityList EntitiesToClear**: All vehicles, peds, and other entities related to the event must be added to this list via EntitiesToClear.Add(entity). It's critical that this is done as this is how SuperEvents will clean up entities when the event ends. It also helps SuperEvents clean up if the event crashes.
 >  - **BlipList BlipsToClear**: This is where all blips you create should be added, similar to the other list. It's unlikely you will need this as SuperEvents will create a blip automatically if it's enabled in the config. Regardless this list exists just incase you need other blips.
+> <br>
+> 
 >  ![Example Usage](https://i.imgur.com/oU8YMWk.png)<br>
 ><br>
 
@@ -43,12 +45,13 @@
 > - **End(false)** Standard way of ending an event. This will dismiss all entities in the EntitiesToClear list, and delete all blips in the list.
 > - **End(true)** Non-standard way of ending an event. This will forcefully delete all items related to the event and try to move on. This should only be used in the case of errors.
 > <br><br>
-> The End(bool) method doesn't need to be overridden in almost all cases, as adding your items to the correct lists will handle everything behind the scenes. Even the RageNativeUI related items are handled in the base class. And ideal event does not override this method. **If you use End() without an argumnt, it will default to false.**
+> The End(bool) method doesn't need to be overridden in almost all cases, as adding your items to the correct lists will handle everything behind the scenes. Even the RageNativeUI related items are handled in the base class. And ideal event does not override this method. **If you use End() without an argumnt, it will default to false.**<br>
+> <br>
+> 
 >![Example](https://i.imgur.com/ai3gPWr.png)
 > <br><br>
 >
 > ##### <br><br>These three methods alone can handle all simple events. There are two other methods which can be used for RageNativeUI objects for dialogue or actions, and a third override for OnScene(). There is a good example of them being used in the Fight.cs class in the Events directory.
-<br>
 <br>
 
 ## Registering Events
