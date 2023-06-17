@@ -2,6 +2,8 @@
 ***By SuperPyroManiac***
 <br>
 > This will help you understand and use the API to easily create your own events!
+> Keep in mind, you may not re-distrubute SuperEvents. People must download the main plugin from my LSPDFR page.
+> https://www.lcpdfr.com/downloads/gta5mods/scripts/24437-superevents/
 
 <br>
 
